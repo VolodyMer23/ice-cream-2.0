@@ -1,0 +1,83 @@
+<section class="hero" id="hero">
+  <div class="hero__container container">
+    <h1 class="hero__title title">
+      ice cream<br />
+      made with<br />
+      <span class="hero__title--passion">passion</span>
+    </h1>
+    <div class="hero-btn__wrapper">
+        <button type="button" class="hero__btn btn--transparent">Products</button>
+        <a href="#about" class="hero__btn--link">How it’s made?</a>
+    </div>
+    <div class="descript-wrapper">
+        <picture class="hero-img__plate">
+          <source
+            srcset="
+              ./images/hero/ice-cream-plate-desk@1x.png 1x,
+              ./images/hero/ice-cream-plate-desk@2x.png 2x
+            "
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="
+              ./images/hero/ice-cream-plate-tab@1x.png 1x,
+              ./images/hero/ice-cream-plate-tab@2x.png 2x
+            "
+            media="(min-width: 768px)"
+          />
+          <img
+            src="./images/hero/ice-cream-plate-desk@1x.png"
+            width="225"
+            alt="plate with ice-cream"
+          />
+        </picture>
+        <div class="text-wrapper">
+            <p class="hero__descript">
+              Ice is a place where you will become not only a little happier, but also
+              healthier. Health is ...
+            </p>
+        
+            <a class="hero__link link" href="#about">
+              <svg class="hero__arrow" width="40" height="16">
+                <use href="./images/vectors.svg#icon-arrow"></use>
+              </svg>
+            </a>
+        </div>
+    </div>
+
+    <picture class="hero-img__icecream">
+      <source
+        srcset="
+          ./images/hero/ice-cream-desk@1x.png 1x,
+          ./images/hero/ice-cream-desk@2x.png 2x
+        "
+        media="(min-width: 1200px)"
+      />
+      <source
+        srcset="
+          ./images/hero/ice-cream-tab@1x.png 1x,
+          ./images/hero/ice-cream-tab@2x.png 2x
+        "
+        media="(min-width: 768px)"
+      />
+      <source
+        srcset="
+          ./images/hero/ice-cream-mob@1x.png 1x,
+          ./images/hero/ice-cream-mob@2x.png 2x
+        "
+        media="(min-width: 320px)"
+      />
+      <img
+        src="./images/hero/ice-cream-desk@1x.png"
+        width="456"
+        alt="plate with ice-cream"
+      />
+    </picture>
+    <div class="hero__property">
+      <strong class="property__quantity">16</strong>
+      <p class="property__item">cafes</p>
+      <strong class="property__quantity">23</strong>
+      <p class="property__item">food trucks</p>
+    </div>
+  </div>
+</section>

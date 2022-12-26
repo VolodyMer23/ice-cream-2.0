@@ -1,0 +1,315 @@
+$maxWidth: 1200; // Variable for mixin adaptiv-font
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}
+
+.hero {
+  background-color: var(--col-bg-dark);
+}
+
+.hero__container {
+  padding-top: 99px;
+  position: relative;
+  width: 100%;
+  background-image: url(../images/hero/dots-mob@1x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @include retina {
+    background-image: url(../images/hero/dots-mob@2x.png);
+    background-size: contain;
+  }
+  @media screen and (min-width: 480px) {
+    padding-bottom: 18px;
+    background-image: url(../images/hero/dots-left-mob@1x.png), url(../images/hero/dots-right-mob@1x.png);
+    background-size: auto, auto;
+    background-repeat: no-repeat,no-repeat;
+    background-position: bottom left, bottom right;
+    @include retina {
+        background-image: url(../images/hero/dots-left-mob@2x.png), url(../images/hero/dots-right-mob@2x.png);
+        background-size: 90px, 165px;
+    }
+
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 12px;
+    background-image: url(../images/hero/dots-left-tab@1x.png), url(../images/hero/dots-right-tab@1x.png);
+    background-size: auto, auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom left, bottom right;
+    @include retina {
+        background-image: url(../images/hero/dots-left-tab@2x.png), url(../images/hero/dots-right-tab@2x.png);
+        background-size: 110px, 180px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: bottom left, bottom right;
+    }
+  }
+
+  @include desktop {
+    padding-top: 118px;
+    width: 1200px;
+    padding-bottom: 60px;
+    background-image: url(../images/hero/dots-desk@1x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @include retina {
+        background-image: url(../images/hero/dots-desk@2x.png);
+        background-size: contain;
+        background-size: 100%;
+      }
+  }
+}
+
+.hero__title {
+  font-family: 'Seymour One', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: calc(33 / 26);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: var(--col-icon-light);
+
+  @include tablet {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  @include desktop {
+    line-height: 1.26;
+    margin-bottom: 30px;
+    font-size: 38px;
+  }
+}
+
+.hero__title--passion {
+  font-family: 'Seymour One', sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 0.96;
+}
+
+.hero-btn__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 19px;
+  margin-right: auto;
+
+  @include tablet {
+    margin-bottom: 12px;
+  }
+
+  @include desktop {
+    margin-bottom: 42px;
+  }
+}
+
+.hero__btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 108px;
+  height: 38px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.28;
+
+  @include desktop {
+    width: 134px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.28;
+  }
+}
+
+.hero__btn--link {
+  display: flex;
+  color: var(--col-btn-bg-default);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  height: 38px;
+  width: 100%;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.28;
+
+  background-color: transparent;
+
+  @include desktop {
+    padding: 12px 20px;
+    height: 42px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.28;
+  }
+
+  &:hover {
+    color: var(--col-btn-bg-hover);
+  }
+
+  &:focus {
+    color: var(--col-btn-focus);
+  }
+}
+
+.descript-wrapper {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    gap: 16px;
+  }
+}
+
+.text-wrapper {
+  display: none;
+  margin-right: 0;
+  margin-left: 0;
+
+  @include tablet {
+    display: block;
+    width: 140px;
+  }
+
+  @include desktop {
+    width: 200px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.hero__descript {
+  color: var(--col-icon-light);
+  display: block;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 1.41;
+    margin-bottom: 12px;
+  }
+
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.43;
+    margin-bottom: 24px;
+  }
+}
+
+.hero-img__plate {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  width: 225px;
+
+  @include tablet {
+    display: block;
+    width: 152px;
+  }
+
+  @include desktop {
+    bottom: 65px;
+    left: 16px;
+    width: 225px;
+  }
+}
+
+.hero-img__icecream {
+  bottom: 0;
+  right: 60;
+  display: block;
+  margin-left: auto;
+  margin-right: 12vw;
+  max-width: 100%;
+  height: auto;
+  width: 177px;
+
+  @media screen and (min-width: 480px) {
+    position: absolute;
+    bottom: 0;
+    right: 16;
+    width: 190px;
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    right: 92;
+    width: 268px;
+    margin-right: 0;
+  }
+
+  @include desktop {
+    width: 456px;
+  }
+}
+
+.hero__arrow {
+  fill: var(--col-icon-light);
+}
+
+.hero__property {
+  display: none;
+
+  @include tablet {
+    position: absolute;
+    right: 32px;
+    top: 94px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 4px;
+  }
+
+  @include desktop {
+    position: absolute;
+    right: 16px;
+    top: 126px;
+    gap: 4px;
+  }
+}
+.property__quantity {
+  @include tablet {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--col-text-primary);
+  }
+
+  @include desktop {
+    font-size: 46px;
+    line-height: 1.22;
+  }
+}
+.property__item {
+  color: var(--col-text-secondary);
+  @include tablet {
+    font-size: 8px;
+    line-height: 1.25;
+  }
+
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}
